@@ -1,0 +1,1334 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>practicas-estudiantes documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">practicas-estudiantes documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  PracticasComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/practicas/practicas.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de Prácticas
+Este componente gestiona la visualización y edición de las prácticas.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-practicas</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>FormsModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>MatTableModule</code>
+                            <code>MatPaginatorModule</code>
+                            <code>NgIf</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./practicas.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./practicas.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#editing" >editing</a>
+                            </li>
+                            <li>
+                                <a href="#editingId" >editingId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#paginator" >paginator</a>
+                            </li>
+                            <li>
+                                <a href="#practicaForm" >practicaForm</a>
+                            </li>
+                            <li>
+                                <a href="#practicas" >practicas</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loadPracticas" >loadPracticas</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onDelete" >onDelete</a>
+                            </li>
+                            <li>
+                                <a href="#onEdit" >onEdit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, apiService: <a href="../injectables/ApiService.html" target="_self">ApiService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/modules/practicas/practicas.component.ts:105</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>apiService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ApiService.html" target="_self" >ApiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadPracticas"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loadPracticas</b></span>
+                        <a href="#loadPracticas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadPracticas()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="133"
+                                    class="link-to-prism">src/app/modules/practicas/practicas.component.ts:133</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga la lista de prácticas desde la API</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="126"
+                                    class="link-to-prism">src/app/modules/practicas/practicas.component.ts:126</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que se ejecuta al inicializar el componente</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDelete"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>onDelete</b></span>
+                        <a href="#onDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onDelete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="175"
+                                    class="link-to-prism">src/app/modules/practicas/practicas.component.ts:175</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina una práctica por ID</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID de la práctica a eliminar</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEdit"></a>
+                    <span class="name">
+                        <span ><b>onEdit</b></span>
+                        <a href="#onEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEdit(practica: <a href="../interfaces/Practica.html" target="_self">Practica</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="165"
+                                    class="link-to-prism">src/app/modules/practicas/practicas.component.ts:165</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga los datos de una práctica en el formulario para editar</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>practica</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Practica.html" target="_self" >Practica</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>La práctica a editar</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="142"
+                                    class="link-to-prism">src/app/modules/practicas/practicas.component.ts:142</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja el evento de envío del formulario de práctica</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new MatTableDataSource&lt;Practica&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/modules/practicas/practicas.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fuente de datos para la tabla de prácticas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;id&#x27;, &#x27;clasificaciones&#x27;, &#x27;no_folio&#x27;, &#x27;fecha_entrega_facultad&#x27;, &#x27;numero_practica_inscribe&#x27;, &#x27;fecha_inscripcion_materia&#x27;, &#x27;nrc&#x27;, &#x27;programa&#x27;, &#x27;documento_estudiante&#x27;, &#x27;id_empresa&#x27;, &#x27;id_contacto&#x27;, &#x27;id_jefe&#x27;, &#x27;acciones&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/modules/practicas/practicas.component.ts:98</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Columnas mostradas en la tabla de prácticas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editing"></a>
+                    <span class="name">
+                        <span ><b>editing</b></span>
+                        <a href="#editing"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/modules/practicas/practicas.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indica si se está editando una práctica</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editingId"></a>
+                    <span class="name">
+                        <span ><b>editingId</b></span>
+                        <a href="#editingId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/modules/practicas/practicas.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ID de la práctica que se está editando</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginator"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>paginator</b></span>
+                        <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatPaginator</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatPaginator)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/modules/practicas/practicas.component.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="practicaForm"></a>
+                    <span class="name">
+                        <span ><b>practicaForm</b></span>
+                        <a href="#practicaForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/modules/practicas/practicas.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario de práctica</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="practicas"></a>
+                    <span class="name">
+                        <span ><b>practicas</b></span>
+                        <a href="#practicas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Practica.html" target="_self" >Practica[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/modules/practicas/practicas.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de prácticas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
+import { ApiService } from &#x27;../../services/api.service&#x27;;
+import { MatTableModule } from &#x27;@angular/material/table&#x27;;
+import { MatPaginator, MatPaginatorModule } from &#x27;@angular/material/paginator&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { NgIf } from &quot;@angular/common&quot;;
+
+/**
+ * Interfaz para definir la estructura de una práctica
+ */
+interface Practica {
+  /**
+   * Identificador de la práctica
+   */
+  id: number;
+  /**
+   * Clasificaciones de la práctica
+   */
+  clasificaciones: string;
+  /**
+   * Número de folio de la práctica
+   */
+  no_folio: string;
+  /**
+   * Fecha de entrega en la facultad
+   */
+  fecha_entrega_facultad: string;
+  /**
+   * Número de práctica inscrita
+   */
+  numero_practica_inscribe: string;
+  /**
+   * Fecha de inscripción de la materia
+   */
+  fecha_inscripcion_materia: string;
+  /**
+   * NRC de la práctica
+   */
+  nrc: string;
+  /**
+   * Programa asociado a la práctica
+   */
+  programa: string;
+  /**
+   * Documento del estudiante asociado a la práctica
+   */
+  documento_estudiante: string;
+  /**
+   * Identificador de la empresa asociada a la práctica
+   */
+  id_empresa: number;
+  /**
+   * Identificador del contacto asociado a la práctica
+   */
+  id_contacto: number;
+  /**
+   * Identificador del jefe asociado a la práctica
+   */
+  id_jefe: number;
+}
+
+/**
+ * Componente de Prácticas
+ * Este componente gestiona la visualización y edición de las prácticas.
+ */
+@Component({
+  selector: &#x27;app-practicas&#x27;,
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, MatTableModule, MatPaginatorModule, NgIf],
+  templateUrl: &#x27;./practicas.component.html&#x27;,
+  styleUrl: &#x27;./practicas.component.scss&#x27;
+})
+export class PracticasComponent implements OnInit {
+  /**
+   * Lista de prácticas
+   */
+  practicas: Practica[] &#x3D; [];
+
+  /**
+   * Formulario de práctica
+   */
+  practicaForm: FormGroup;
+
+  /**
+   * Indica si se está editando una práctica
+   */
+  editing &#x3D; false;
+
+  /**
+   * ID de la práctica que se está editando
+   */
+  editingId: number | null &#x3D; null;
+
+  /**
+   * Columnas mostradas en la tabla de prácticas
+   */
+  displayedColumns: string[] &#x3D; [&#x27;id&#x27;, &#x27;clasificaciones&#x27;, &#x27;no_folio&#x27;, &#x27;fecha_entrega_facultad&#x27;, &#x27;numero_practica_inscribe&#x27;, &#x27;fecha_inscripcion_materia&#x27;, &#x27;nrc&#x27;, &#x27;programa&#x27;, &#x27;documento_estudiante&#x27;, &#x27;id_empresa&#x27;, &#x27;id_contacto&#x27;, &#x27;id_jefe&#x27;, &#x27;acciones&#x27;];
+
+  /**
+   * Fuente de datos para la tabla de prácticas
+   */
+  dataSource &#x3D; new MatTableDataSource&lt;Practica&gt;();
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  constructor(private fb: FormBuilder, private apiService: ApiService) {
+    this.practicaForm &#x3D; this.fb.group({
+      clasificaciones: [&#x27;&#x27;, Validators.required],
+      no_folio: [&#x27;&#x27;],
+      fecha_entrega_facultad: [&#x27;&#x27;],
+      numero_practica_inscribe: [&#x27;&#x27;],
+      fecha_inscripcion_materia: [&#x27;&#x27;],
+      nrc: [&#x27;&#x27;],
+      programa: [&#x27;&#x27;],
+      documento_estudiante: [&#x27;&#x27;],
+      id_empresa: [null],
+      id_contacto: [null],
+      id_jefe: [null]
+    });
+  }
+
+  /**
+   * Método que se ejecuta al inicializar el componente
+   */
+  ngOnInit(): void {
+    this.loadPracticas();
+  }
+
+  /**
+   * Carga la lista de prácticas desde la API
+   */
+  async loadPracticas(): Promise&lt;void&gt; {
+    this.practicas &#x3D; await this.apiService.getPracticas();
+    this.dataSource.data &#x3D; this.practicas;
+    this.dataSource.paginator &#x3D; this.paginator;
+  }
+
+  /**
+   * Maneja el evento de envío del formulario de práctica
+   */
+  async onSubmit(): Promise&lt;void&gt; {
+    if (this.practicaForm.invalid) {
+      return;
+    }
+
+    const practica: Practica &#x3D; this.practicaForm.value;
+
+    if (this.editing) {
+      await this.apiService.updatePractica(this.editingId!, practica);
+      this.editing &#x3D; false;
+      this.editingId &#x3D; null;
+    } else {
+      await this.apiService.createPractica(practica);
+    }
+
+    this.practicaForm.reset();
+    this.loadPracticas();
+  }
+
+  /**
+   * Carga los datos de una práctica en el formulario para editar
+   * @param {Practica} practica - La práctica a editar
+   */
+  onEdit(practica: Practica): void {
+    this.editing &#x3D; true;
+    this.editingId &#x3D; practica.id;
+    this.practicaForm.patchValue(practica);
+  }
+
+  /**
+   * Elimina una práctica por ID
+   * @param {number} id - El ID de la práctica a eliminar
+   */
+  async onDelete(id: number): Promise&lt;void&gt; {
+    await this.apiService.deletePractica(id);
+    this.loadPracticas();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-5&quot;&gt;
+  &lt;h2 class&#x3D;&quot;mb-4&quot;&gt;Administrar Prácticas&lt;/h2&gt;
+
+  &lt;div class&#x3D;&quot;card shadow-lg p-4 mb-5 bg-white rounded custom-card&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;practicaForm&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; class&#x3D;&quot;form&quot;&gt;
+      &lt;div class&#x3D;&quot;form-row&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;clasificaciones&quot;&gt;Clasificaciones&lt;/label&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;clasificaciones&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;clasificaciones&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;practicaForm.controls[&#x27;clasificaciones&#x27;].invalid &amp;&amp; practicaForm.controls[&#x27;clasificaciones&#x27;].touched&quot; class&#x3D;&quot;text-danger&quot;&gt;
+            Las clasificaciones son obligatorias.
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;no_folio&quot;&gt;No. Folio&lt;/label&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;no_folio&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;no_folio&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-row&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;fecha_entrega_facultad&quot;&gt;Fecha Entrega Facultad&lt;/label&gt;
+          &lt;input type&#x3D;&quot;date&quot; id&#x3D;&quot;fecha_entrega_facultad&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;fecha_entrega_facultad&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;numero_practica_inscribe&quot;&gt;Número Práctica Inscribe&lt;/label&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;numero_practica_inscribe&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;numero_practica_inscribe&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-row&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;fecha_inscripcion_materia&quot;&gt;Fecha Inscripción Materia&lt;/label&gt;
+          &lt;input type&#x3D;&quot;date&quot; id&#x3D;&quot;fecha_inscripcion_materia&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;fecha_inscripcion_materia&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;nrc&quot;&gt;NRC&lt;/label&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;nrc&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;nrc&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-row&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;programa&quot;&gt;Programa&lt;/label&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;programa&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;programa&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;documento_estudiante&quot;&gt;Documento Estudiante&lt;/label&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;documento_estudiante&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;documento_estudiante&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-row&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;id_empresa&quot;&gt;ID Empresa&lt;/label&gt;
+          &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;id_empresa&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;id_empresa&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;id_contacto&quot;&gt;ID Contacto&lt;/label&gt;
+          &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;id_contacto&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;id_contacto&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-row&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;id_jefe&quot;&gt;ID Jefe&lt;/label&gt;
+          &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;id_jefe&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;id_jefe&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary mt-2&quot; [disabled]&#x3D;&quot;practicaForm.invalid&quot;&gt;
+        {{ editing ? &#x27;Actualizar&#x27; : &#x27;Crear&#x27; }}
+      &lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary mt-2 mx-2&quot; (click)&#x3D;&quot;practicaForm.reset(); editing&#x3D;false; editingId&#x3D;null;&quot;&gt;
+        Cancelar
+      &lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+
+  &lt;h3 class&#x3D;&quot;mt-5&quot;&gt;Lista de Prácticas&lt;/h3&gt;
+  &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;[5, 10, 20]&quot; showFirstLastButtons&gt;&lt;/mat-paginator&gt;
+
+  &lt;div class&#x3D;&quot;table-responsive&quot;&gt;
+    &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;id&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; ID &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.id }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;clasificaciones&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Clasificaciones &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.clasificaciones }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;no_folio&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; No. Folio &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.no_folio }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;fecha_entrega_facultad&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Fecha Entrega Facultad &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.fecha_entrega_facultad }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;numero_practica_inscribe&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Número Práctica Inscribe &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.numero_practica_inscribe }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;fecha_inscripcion_materia&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Fecha Inscripción Materia &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.fecha_inscripcion_materia }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;nrc&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; NRC &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.nrc }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;programa&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Programa &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.programa }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;documento_estudiante&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Documento Estudiante &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.documento_estudiante }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;id_empresa&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; ID Empresa &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.id_empresa }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;id_contacto&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; ID Contacto &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.id_contacto }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;id_jefe&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; ID Jefe &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt; {{ practica.id_jefe }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;acciones&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Acciones &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let practica&quot;&gt;
+          &lt;div class&#x3D;&quot;action-buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;btn btn-warning btn-sm&quot; (click)&#x3D;&quot;onEdit(practica)&quot;&gt;Editar&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-danger btn-sm mx-2&quot; (click)&#x3D;&quot;onDelete(practica.id)&quot;&gt;Eliminar&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+      &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-5">  <h2 class="mb-4">Administrar Prácticas</h2>  <div class="card shadow-lg p-4 mb-5 bg-white rounded custom-card">    <form [formGroup]="practicaForm" (ngSubmit)="onSubmit()" class="form">      <div class="form-row">        <div class="form-group col-md-6 col-sm-12">          <label for="clasificaciones">Clasificaciones</label>          <input type="text" id="clasificaciones" class="form-control" formControlName="clasificaciones">          <div *ngIf="practicaForm.controls[\'clasificaciones\'].invalid && practicaForm.controls[\'clasificaciones\'].touched" class="text-danger">            Las clasificaciones son obligatorias.          </div>        </div>        <div class="form-group col-md-6 col-sm-12">          <label for="no_folio">No. Folio</label>          <input type="text" id="no_folio" class="form-control" formControlName="no_folio">        </div>      </div>      <div class="form-row">        <div class="form-group col-md-6 col-sm-12">          <label for="fecha_entrega_facultad">Fecha Entrega Facultad</label>          <input type="date" id="fecha_entrega_facultad" class="form-control" formControlName="fecha_entrega_facultad">        </div>        <div class="form-group col-md-6 col-sm-12">          <label for="numero_practica_inscribe">Número Práctica Inscribe</label>          <input type="text" id="numero_practica_inscribe" class="form-control" formControlName="numero_practica_inscribe">        </div>      </div>      <div class="form-row">        <div class="form-group col-md-6 col-sm-12">          <label for="fecha_inscripcion_materia">Fecha Inscripción Materia</label>          <input type="date" id="fecha_inscripcion_materia" class="form-control" formControlName="fecha_inscripcion_materia">        </div>        <div class="form-group col-md-6 col-sm-12">          <label for="nrc">NRC</label>          <input type="text" id="nrc" class="form-control" formControlName="nrc">        </div>      </div>      <div class="form-row">        <div class="form-group col-md-6 col-sm-12">          <label for="programa">Programa</label>          <input type="text" id="programa" class="form-control" formControlName="programa">        </div>        <div class="form-group col-md-6 col-sm-12">          <label for="documento_estudiante">Documento Estudiante</label>          <input type="text" id="documento_estudiante" class="form-control" formControlName="documento_estudiante">        </div>      </div>      <div class="form-row">        <div class="form-group col-md-6 col-sm-12">          <label for="id_empresa">ID Empresa</label>          <input type="number" id="id_empresa" class="form-control" formControlName="id_empresa">        </div>        <div class="form-group col-md-6 col-sm-12">          <label for="id_contacto">ID Contacto</label>          <input type="number" id="id_contacto" class="form-control" formControlName="id_contacto">        </div>      </div>      <div class="form-row">        <div class="form-group col-md-6 col-sm-12">          <label for="id_jefe">ID Jefe</label>          <input type="number" id="id_jefe" class="form-control" formControlName="id_jefe">        </div>      </div>      <button type="submit" class="btn btn-primary mt-2" [disabled]="practicaForm.invalid">        {{ editing ? \'Actualizar\' : \'Crear\' }}      </button>      <button type="button" class="btn btn-secondary mt-2 mx-2" (click)="practicaForm.reset(); editing=false; editingId=null;">        Cancelar      </button>    </form>  </div>  <h3 class="mt-5">Lista de Prácticas</h3>  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>  <div class="table-responsive">    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">      <ng-container matColumnDef="id">        <th mat-header-cell *matHeaderCellDef> ID </th>        <td mat-cell *matCellDef="let practica"> {{ practica.id }} </td>      </ng-container>      <ng-container matColumnDef="clasificaciones">        <th mat-header-cell *matHeaderCellDef> Clasificaciones </th>        <td mat-cell *matCellDef="let practica"> {{ practica.clasificaciones }} </td>      </ng-container>      <ng-container matColumnDef="no_folio">        <th mat-header-cell *matHeaderCellDef> No. Folio </th>        <td mat-cell *matCellDef="let practica"> {{ practica.no_folio }} </td>      </ng-container>      <ng-container matColumnDef="fecha_entrega_facultad">        <th mat-header-cell *matHeaderCellDef> Fecha Entrega Facultad </th>        <td mat-cell *matCellDef="let practica"> {{ practica.fecha_entrega_facultad }} </td>      </ng-container>      <ng-container matColumnDef="numero_practica_inscribe">        <th mat-header-cell *matHeaderCellDef> Número Práctica Inscribe </th>        <td mat-cell *matCellDef="let practica"> {{ practica.numero_practica_inscribe }} </td>      </ng-container>      <ng-container matColumnDef="fecha_inscripcion_materia">        <th mat-header-cell *matHeaderCellDef> Fecha Inscripción Materia </th>        <td mat-cell *matCellDef="let practica"> {{ practica.fecha_inscripcion_materia }} </td>      </ng-container>      <ng-container matColumnDef="nrc">        <th mat-header-cell *matHeaderCellDef> NRC </th>        <td mat-cell *matCellDef="let practica"> {{ practica.nrc }} </td>      </ng-container>      <ng-container matColumnDef="programa">        <th mat-header-cell *matHeaderCellDef> Programa </th>        <td mat-cell *matCellDef="let practica"> {{ practica.programa }} </td>      </ng-container>      <ng-container matColumnDef="documento_estudiante">        <th mat-header-cell *matHeaderCellDef> Documento Estudiante </th>        <td mat-cell *matCellDef="let practica"> {{ practica.documento_estudiante }} </td>      </ng-container>      <ng-container matColumnDef="id_empresa">        <th mat-header-cell *matHeaderCellDef> ID Empresa </th>        <td mat-cell *matCellDef="let practica"> {{ practica.id_empresa }} </td>      </ng-container>      <ng-container matColumnDef="id_contacto">        <th mat-header-cell *matHeaderCellDef> ID Contacto </th>        <td mat-cell *matCellDef="let practica"> {{ practica.id_contacto }} </td>      </ng-container>      <ng-container matColumnDef="id_jefe">        <th mat-header-cell *matHeaderCellDef> ID Jefe </th>        <td mat-cell *matCellDef="let practica"> {{ practica.id_jefe }} </td>      </ng-container>      <ng-container matColumnDef="acciones">        <th mat-header-cell *matHeaderCellDef> Acciones </th>        <td mat-cell *matCellDef="let practica">          <div class="action-buttons">            <button class="btn btn-warning btn-sm" (click)="onEdit(practica)">Editar</button>            <button class="btn btn-danger btn-sm mx-2" (click)="onDelete(practica.id)">Eliminar</button>          </div>        </td>      </ng-container>      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>    </table>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactosComponent', 'selector': 'app-contactos'},{'name': 'EmpresaComponent', 'selector': 'app-empresa'},{'name': 'EstudiantesComponent', 'selector': 'app-estudiantes'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JefeComponent', 'selector': 'app-jefe'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'NosotrosComponent', 'selector': 'app-nosotros'},{'name': 'PracticasComponent', 'selector': 'app-practicas'},{'name': 'ProgramasComponent', 'selector': 'app-programas'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PracticasComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PracticasComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1256 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>practicas-estudiantes documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">practicas-estudiantes documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  EmpresaComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/empresa/empresa.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de Empresa
+Este componente gestiona la visualización y edición de las empresas.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-empresa</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>FormsModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>MatTableModule</code>
+                            <code>MatPaginatorModule</code>
+                            <code>NgIf</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./empresa.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./empresa.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#editing" >editing</a>
+                            </li>
+                            <li>
+                                <a href="#editingId" >editingId</a>
+                            </li>
+                            <li>
+                                <a href="#empresaForm" >empresaForm</a>
+                            </li>
+                            <li>
+                                <a href="#empresas" >empresas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#paginator" >paginator</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loadEmpresas" >loadEmpresas</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onDelete" >onDelete</a>
+                            </li>
+                            <li>
+                                <a href="#onEdit" >onEdit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, apiService: <a href="../injectables/ApiService.html" target="_self">ApiService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/modules/empresa/empresa.component.ts:81</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>apiService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ApiService.html" target="_self" >ApiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadEmpresas"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loadEmpresas</b></span>
+                        <a href="#loadEmpresas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadEmpresas()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/modules/empresa/empresa.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga la lista de empresas desde la API</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/app/modules/empresa/empresa.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que se ejecuta al inicializar el componente</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDelete"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>onDelete</b></span>
+                        <a href="#onDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onDelete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="145"
+                                    class="link-to-prism">src/app/modules/empresa/empresa.component.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina una empresa por ID</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID de la empresa a eliminar</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEdit"></a>
+                    <span class="name">
+                        <span ><b>onEdit</b></span>
+                        <a href="#onEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEdit(empresa: <a href="../interfaces/Empresa.html" target="_self">Empresa</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="135"
+                                    class="link-to-prism">src/app/modules/empresa/empresa.component.ts:135</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga los datos de una empresa en el formulario para editar</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>empresa</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Empresa.html" target="_self" >Empresa</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>La empresa a editar</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">src/app/modules/empresa/empresa.component.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja el evento de envío del formulario de empresa</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new MatTableDataSource&lt;Empresa&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/modules/empresa/empresa.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fuente de datos para la tabla de empresas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;id&#x27;, &#x27;fecha_inicio&#x27;, &#x27;fecha_terminacion&#x27;, &#x27;total_dias_practica&#x27;, &#x27;nit&#x27;, &#x27;nombre_empresa&#x27;, &#x27;acciones&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/modules/empresa/empresa.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Columnas mostradas en la tabla de empresas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editing"></a>
+                    <span class="name">
+                        <span ><b>editing</b></span>
+                        <a href="#editing"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/modules/empresa/empresa.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indica si se está editando una empresa</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editingId"></a>
+                    <span class="name">
+                        <span ><b>editingId</b></span>
+                        <a href="#editingId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/modules/empresa/empresa.component.ts:69</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ID de la empresa que se está editando</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="empresaForm"></a>
+                    <span class="name">
+                        <span ><b>empresaForm</b></span>
+                        <a href="#empresaForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/modules/empresa/empresa.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Formulario de empresa</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="empresas"></a>
+                    <span class="name">
+                        <span ><b>empresas</b></span>
+                        <a href="#empresas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Empresa.html" target="_self" >Empresa[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/modules/empresa/empresa.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de empresas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginator"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>paginator</b></span>
+                        <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatPaginator</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatPaginator)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/modules/empresa/empresa.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { ApiService } from &#x27;../../services/api.service&#x27;;
+import { MatTableModule } from &#x27;@angular/material/table&#x27;;
+import { MatPaginator, MatPaginatorModule } from &#x27;@angular/material/paginator&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { NgIf } from &quot;@angular/common&quot;;
+
+/**
+ * Interfaz para definir la estructura de una empresa
+ */
+interface Empresa {
+  /**
+   * Identificador de la empresa
+   */
+  id: number;
+  /**
+   * Fecha de inicio de la práctica en la empresa
+   */
+  fecha_inicio: string;
+  /**
+   * Fecha de terminación de la práctica en la empresa
+   */
+  fecha_terminacion: string;
+  /**
+   * Total de días de práctica en la empresa
+   */
+  total_dias_practica: number;
+  /**
+   * NIT de la empresa
+   */
+  nit: string;
+  /**
+   * Nombre de la empresa
+   */
+  nombre_empresa: string;
+}
+
+/**
+ * Componente de Empresa
+ * Este componente gestiona la visualización y edición de las empresas.
+ */
+@Component({
+  selector: &#x27;app-empresa&#x27;,
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, MatTableModule, MatPaginatorModule, NgIf],
+  templateUrl: &#x27;./empresa.component.html&#x27;,
+  styleUrl: &#x27;./empresa.component.scss&#x27;
+})
+export class EmpresaComponent implements OnInit {
+  /**
+   * Lista de empresas
+   */
+  empresas: Empresa[] &#x3D; [];
+
+  /**
+   * Formulario de empresa
+   */
+  empresaForm: FormGroup;
+
+  /**
+   * Indica si se está editando una empresa
+   */
+  editing &#x3D; false;
+
+  /**
+   * ID de la empresa que se está editando
+   */
+  editingId: number | null &#x3D; null;
+
+  /**
+   * Columnas mostradas en la tabla de empresas
+   */
+  displayedColumns: string[] &#x3D; [&#x27;id&#x27;, &#x27;fecha_inicio&#x27;, &#x27;fecha_terminacion&#x27;, &#x27;total_dias_practica&#x27;, &#x27;nit&#x27;, &#x27;nombre_empresa&#x27;, &#x27;acciones&#x27;];
+
+  /**
+   * Fuente de datos para la tabla de empresas
+   */
+  dataSource &#x3D; new MatTableDataSource&lt;Empresa&gt;();
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  constructor(private fb: FormBuilder, private apiService: ApiService) {
+    this.empresaForm &#x3D; this.fb.group({
+      fecha_inicio: [&#x27;&#x27;, Validators.required],
+      fecha_terminacion: [&#x27;&#x27;, Validators.required],
+      total_dias_practica: [&#x27;&#x27;, Validators.required],
+      nit: [&#x27;&#x27;, Validators.required],
+      nombre_empresa: [&#x27;&#x27;, Validators.required]
+    });
+  }
+
+  /**
+   * Método que se ejecuta al inicializar el componente
+   */
+  ngOnInit(): void {
+    this.loadEmpresas();
+  }
+
+  /**
+   * Carga la lista de empresas desde la API
+   */
+  async loadEmpresas(): Promise&lt;void&gt; {
+    this.empresas &#x3D; await this.apiService.getEmpresas();
+    this.dataSource.data &#x3D; this.empresas;
+    this.dataSource.paginator &#x3D; this.paginator;
+  }
+
+  /**
+   * Maneja el evento de envío del formulario de empresa
+   */
+  async onSubmit(): Promise&lt;void&gt; {
+    if (this.empresaForm.invalid) {
+      return;
+    }
+
+    const empresa: Empresa &#x3D; this.empresaForm.value;
+
+    if (this.editing) {
+      await this.apiService.updateEmpresa(this.editingId!, empresa);
+      this.editing &#x3D; false;
+      this.editingId &#x3D; null;
+    } else {
+      await this.apiService.createEmpresa(empresa);
+    }
+
+    this.empresaForm.reset();
+    this.loadEmpresas();
+  }
+
+  /**
+   * Carga los datos de una empresa en el formulario para editar
+   * @param {Empresa} empresa - La empresa a editar
+   */
+  onEdit(empresa: Empresa): void {
+    this.editing &#x3D; true;
+    this.editingId &#x3D; empresa.id;
+    this.empresaForm.patchValue(empresa);
+  }
+
+  /**
+   * Elimina una empresa por ID
+   * @param {number} id - El ID de la empresa a eliminar
+   */
+  async onDelete(id: number): Promise&lt;void&gt; {
+    await this.apiService.deleteEmpresa(id);
+    this.loadEmpresas();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-5&quot;&gt;
+  &lt;h2 class&#x3D;&quot;mb-4&quot;&gt;Administrar Empresas&lt;/h2&gt;
+
+  &lt;div class&#x3D;&quot;card shadow-lg p-4 mb-5 bg-white rounded custom-card&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;empresaForm&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; class&#x3D;&quot;form&quot;&gt;
+      &lt;div class&#x3D;&quot;form-row&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;fecha_inicio&quot;&gt;Fecha de Inicio&lt;/label&gt;
+          &lt;input type&#x3D;&quot;date&quot; id&#x3D;&quot;fecha_inicio&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;fecha_inicio&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;empresaForm.controls[&#x27;fecha_inicio&#x27;].invalid &amp;&amp; empresaForm.controls[&#x27;fecha_inicio&#x27;].touched&quot; class&#x3D;&quot;text-danger&quot;&gt;
+            La fecha de inicio es obligatoria.
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;fecha_terminacion&quot;&gt;Fecha de Terminación&lt;/label&gt;
+          &lt;input type&#x3D;&quot;date&quot; id&#x3D;&quot;fecha_terminacion&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;fecha_terminacion&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;empresaForm.controls[&#x27;fecha_terminacion&#x27;].invalid &amp;&amp; empresaForm.controls[&#x27;fecha_terminacion&#x27;].touched&quot; class&#x3D;&quot;text-danger&quot;&gt;
+            La fecha de terminación es obligatoria.
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-row&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;total_dias_practica&quot;&gt;Total de Días de Práctica&lt;/label&gt;
+          &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;total_dias_practica&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;total_dias_practica&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;empresaForm.controls[&#x27;total_dias_practica&#x27;].invalid &amp;&amp; empresaForm.controls[&#x27;total_dias_practica&#x27;].touched&quot; class&#x3D;&quot;text-danger&quot;&gt;
+            El total de días de práctica es obligatorio.
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;nit&quot;&gt;NIT&lt;/label&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;nit&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;nit&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;empresaForm.controls[&#x27;nit&#x27;].invalid &amp;&amp; empresaForm.controls[&#x27;nit&#x27;].touched&quot; class&#x3D;&quot;text-danger&quot;&gt;
+            El NIT es obligatorio.
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-row&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group col-md-6 col-sm-12&quot;&gt;
+          &lt;label for&#x3D;&quot;nombre_empresa&quot;&gt;Nombre de la Empresa&lt;/label&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;nombre_empresa&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;nombre_empresa&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;empresaForm.controls[&#x27;nombre_empresa&#x27;].invalid &amp;&amp; empresaForm.controls[&#x27;nombre_empresa&#x27;].touched&quot; class&#x3D;&quot;text-danger&quot;&gt;
+            El nombre de la empresa es obligatorio.
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary mt-2&quot; [disabled]&#x3D;&quot;empresaForm.invalid&quot;&gt;
+        {{ editing ? &#x27;Actualizar&#x27; : &#x27;Crear&#x27; }}
+      &lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary mt-2 mx-2&quot; (click)&#x3D;&quot;empresaForm.reset(); editing&#x3D;false; editingId&#x3D;null;&quot;&gt;
+        Cancelar
+      &lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+
+  &lt;h3 class&#x3D;&quot;mt-5&quot;&gt;Lista de Empresas&lt;/h3&gt;
+  &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;[5, 10, 20]&quot; showFirstLastButtons&gt;&lt;/mat-paginator&gt;
+
+  &lt;div class&#x3D;&quot;table-responsive&quot;&gt;
+    &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;id&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; ID &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let empresa&quot;&gt; {{ empresa.id }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;fecha_inicio&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Fecha de Inicio &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let empresa&quot;&gt; {{ empresa.fecha_inicio }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;fecha_terminacion&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Fecha de Terminación &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let empresa&quot;&gt; {{ empresa.fecha_terminacion }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;total_dias_practica&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Total de Días de Práctica &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let empresa&quot;&gt; {{ empresa.total_dias_practica }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;nit&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; NIT &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let empresa&quot;&gt; {{ empresa.nit }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;nombre_empresa&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Nombre de la Empresa &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let empresa&quot;&gt; {{ empresa.nombre_empresa }} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;acciones&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Acciones &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let empresa&quot;&gt;
+          &lt;div class&#x3D;&quot;action-buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;btn btn-warning btn-sm&quot; (click)&#x3D;&quot;onEdit(empresa)&quot;&gt;Editar&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-danger btn-sm&quot; (click)&#x3D;&quot;onDelete(empresa.id)&quot;&gt;Eliminar&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+      &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-5">  <h2 class="mb-4">Administrar Empresas</h2>  <div class="card shadow-lg p-4 mb-5 bg-white rounded custom-card">    <form [formGroup]="empresaForm" (ngSubmit)="onSubmit()" class="form">      <div class="form-row">        <div class="form-group col-md-6 col-sm-12">          <label for="fecha_inicio">Fecha de Inicio</label>          <input type="date" id="fecha_inicio" class="form-control" formControlName="fecha_inicio">          <div *ngIf="empresaForm.controls[\'fecha_inicio\'].invalid && empresaForm.controls[\'fecha_inicio\'].touched" class="text-danger">            La fecha de inicio es obligatoria.          </div>        </div>        <div class="form-group col-md-6 col-sm-12">          <label for="fecha_terminacion">Fecha de Terminación</label>          <input type="date" id="fecha_terminacion" class="form-control" formControlName="fecha_terminacion">          <div *ngIf="empresaForm.controls[\'fecha_terminacion\'].invalid && empresaForm.controls[\'fecha_terminacion\'].touched" class="text-danger">            La fecha de terminación es obligatoria.          </div>        </div>      </div>      <div class="form-row">        <div class="form-group col-md-6 col-sm-12">          <label for="total_dias_practica">Total de Días de Práctica</label>          <input type="number" id="total_dias_practica" class="form-control" formControlName="total_dias_practica">          <div *ngIf="empresaForm.controls[\'total_dias_practica\'].invalid && empresaForm.controls[\'total_dias_practica\'].touched" class="text-danger">            El total de días de práctica es obligatorio.          </div>        </div>        <div class="form-group col-md-6 col-sm-12">          <label for="nit">NIT</label>          <input type="text" id="nit" class="form-control" formControlName="nit">          <div *ngIf="empresaForm.controls[\'nit\'].invalid && empresaForm.controls[\'nit\'].touched" class="text-danger">            El NIT es obligatorio.          </div>        </div>      </div>      <div class="form-row">        <div class="form-group col-md-6 col-sm-12">          <label for="nombre_empresa">Nombre de la Empresa</label>          <input type="text" id="nombre_empresa" class="form-control" formControlName="nombre_empresa">          <div *ngIf="empresaForm.controls[\'nombre_empresa\'].invalid && empresaForm.controls[\'nombre_empresa\'].touched" class="text-danger">            El nombre de la empresa es obligatorio.          </div>        </div>      </div>      <button type="submit" class="btn btn-primary mt-2" [disabled]="empresaForm.invalid">        {{ editing ? \'Actualizar\' : \'Crear\' }}      </button>      <button type="button" class="btn btn-secondary mt-2 mx-2" (click)="empresaForm.reset(); editing=false; editingId=null;">        Cancelar      </button>    </form>  </div>  <h3 class="mt-5">Lista de Empresas</h3>  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>  <div class="table-responsive">    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">      <ng-container matColumnDef="id">        <th mat-header-cell *matHeaderCellDef> ID </th>        <td mat-cell *matCellDef="let empresa"> {{ empresa.id }} </td>      </ng-container>      <ng-container matColumnDef="fecha_inicio">        <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>        <td mat-cell *matCellDef="let empresa"> {{ empresa.fecha_inicio }} </td>      </ng-container>      <ng-container matColumnDef="fecha_terminacion">        <th mat-header-cell *matHeaderCellDef> Fecha de Terminación </th>        <td mat-cell *matCellDef="let empresa"> {{ empresa.fecha_terminacion }} </td>      </ng-container>      <ng-container matColumnDef="total_dias_practica">        <th mat-header-cell *matHeaderCellDef> Total de Días de Práctica </th>        <td mat-cell *matCellDef="let empresa"> {{ empresa.total_dias_practica }} </td>      </ng-container>      <ng-container matColumnDef="nit">        <th mat-header-cell *matHeaderCellDef> NIT </th>        <td mat-cell *matCellDef="let empresa"> {{ empresa.nit }} </td>      </ng-container>      <ng-container matColumnDef="nombre_empresa">        <th mat-header-cell *matHeaderCellDef> Nombre de la Empresa </th>        <td mat-cell *matCellDef="let empresa"> {{ empresa.nombre_empresa }} </td>      </ng-container>      <ng-container matColumnDef="acciones">        <th mat-header-cell *matHeaderCellDef> Acciones </th>        <td mat-cell *matCellDef="let empresa">          <div class="action-buttons">            <button class="btn btn-warning btn-sm" (click)="onEdit(empresa)">Editar</button>            <button class="btn btn-danger btn-sm" (click)="onDelete(empresa.id)">Eliminar</button>          </div>        </td>      </ng-container>      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>    </table>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactosComponent', 'selector': 'app-contactos'},{'name': 'EmpresaComponent', 'selector': 'app-empresa'},{'name': 'EstudiantesComponent', 'selector': 'app-estudiantes'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JefeComponent', 'selector': 'app-jefe'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'NosotrosComponent', 'selector': 'app-nosotros'},{'name': 'PracticasComponent', 'selector': 'app-practicas'},{'name': 'ProgramasComponent', 'selector': 'app-programas'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'EmpresaComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EmpresaComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

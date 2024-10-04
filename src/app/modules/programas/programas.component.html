@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Administrar Programas</h2>
+
+  <div class="card shadow-lg p-4 mb-5 bg-white rounded custom-card">
+    <form [formGroup]="programaForm" (ngSubmit)="onSubmit()" class="form">
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" class="form-control" formControlName="nombre">
+          <div *ngIf="programaForm.controls['nombre'].invalid && programaForm.controls['nombre'].touched" class="text-danger">
+            El nombre es obligatorio.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2" [disabled]="programaForm.invalid">
+        {{ editing ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button type="button" class="btn btn-secondary mt-2 mx-2" (click)="programaForm.reset(); editing=false; editingId=null;">
+        Cancelar
+      </button>
+    </form>
+  </div>
+
+  <h3 class="mt-5">Lista de Programas</h3>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  <div class="table-responsive">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id_programa">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let programa"> {{ programa.id_programa }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let programa"> {{ programa.nombre }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let programa">
+          <div class="action-buttons">
+            <button class="btn btn-warning btn-sm" (click)="onEdit(programa)">Editar</button>
+            <button class="btn btn-danger btn-sm mx-2" (click)="onDelete(programa.id_programa)">Eliminar</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Administrar Empresas</h2>
+
+  <div class="card shadow-lg p-4 mb-5 bg-white rounded custom-card">
+    <form [formGroup]="empresaForm" (ngSubmit)="onSubmit()" class="form">
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="fecha_inicio">Fecha de Inicio</label>
+          <input type="date" id="fecha_inicio" class="form-control" formControlName="fecha_inicio">
+          <div *ngIf="empresaForm.controls['fecha_inicio'].invalid && empresaForm.controls['fecha_inicio'].touched" class="text-danger">
+            La fecha de inicio es obligatoria.
+          </div>
+        </div>
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="fecha_terminacion">Fecha de Terminación</label>
+          <input type="date" id="fecha_terminacion" class="form-control" formControlName="fecha_terminacion">
+          <div *ngIf="empresaForm.controls['fecha_terminacion'].invalid && empresaForm.controls['fecha_terminacion'].touched" class="text-danger">
+            La fecha de terminación es obligatoria.
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="total_dias_practica">Total de Días de Práctica</label>
+          <input type="number" id="total_dias_practica" class="form-control" formControlName="total_dias_practica">
+          <div *ngIf="empresaForm.controls['total_dias_practica'].invalid && empresaForm.controls['total_dias_practica'].touched" class="text-danger">
+            El total de días de práctica es obligatorio.
+          </div>
+        </div>
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="nit">NIT</label>
+          <input type="text" id="nit" class="form-control" formControlName="nit">
+          <div *ngIf="empresaForm.controls['nit'].invalid && empresaForm.controls['nit'].touched" class="text-danger">
+            El NIT es obligatorio.
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="nombre_empresa">Nombre de la Empresa</label>
+          <input type="text" id="nombre_empresa" class="form-control" formControlName="nombre_empresa">
+          <div *ngIf="empresaForm.controls['nombre_empresa'].invalid && empresaForm.controls['nombre_empresa'].touched" class="text-danger">
+            El nombre de la empresa es obligatorio.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2" [disabled]="empresaForm.invalid">
+        {{ editing ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button type="button" class="btn btn-secondary mt-2 mx-2" (click)="empresaForm.reset(); editing=false; editingId=null;">
+        Cancelar
+      </button>
+    </form>
+  </div>
+
+  <h3 class="mt-5">Lista de Empresas</h3>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  <div class="table-responsive">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let empresa"> {{ empresa.id }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fecha_inicio">
+        <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+        <td mat-cell *matCellDef="let empresa"> {{ empresa.fecha_inicio }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fecha_terminacion">
+        <th mat-header-cell *matHeaderCellDef> Fecha de Terminación </th>
+        <td mat-cell *matCellDef="let empresa"> {{ empresa.fecha_terminacion }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="total_dias_practica">
+        <th mat-header-cell *matHeaderCellDef> Total de Días de Práctica </th>
+        <td mat-cell *matCellDef="let empresa"> {{ empresa.total_dias_practica }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nit">
+        <th mat-header-cell *matHeaderCellDef> NIT </th>
+        <td mat-cell *matCellDef="let empresa"> {{ empresa.nit }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre_empresa">
+        <th mat-header-cell *matHeaderCellDef> Nombre de la Empresa </th>
+        <td mat-cell *matCellDef="let empresa"> {{ empresa.nombre_empresa }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let empresa">
+          <div class="action-buttons">
+            <button class="btn btn-warning btn-sm" (click)="onEdit(empresa)">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="onDelete(empresa.id)">Eliminar</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

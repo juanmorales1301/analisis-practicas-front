@@ -1,0 +1,91 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Administrar Jefes</h2>
+
+  <div class="card shadow-lg p-4 mb-5 bg-white rounded custom-card">
+    <form [formGroup]="jefeForm" (ngSubmit)="onSubmit()" class="form">
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="nombre_jefe">Nombre del Jefe</label>
+          <input type="text" id="nombre_jefe" class="form-control" formControlName="nombre_jefe">
+          <div *ngIf="jefeForm.controls['nombre_jefe'].invalid && jefeForm.controls['nombre_jefe'].touched" class="text-danger">
+            El nombre del jefe es obligatorio.
+          </div>
+        </div>
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="telefono_jefe">Teléfono del Jefe</label>
+          <input type="text" id="telefono_jefe" class="form-control" formControlName="telefono_jefe">
+          <div *ngIf="jefeForm.controls['telefono_jefe'].invalid && jefeForm.controls['telefono_jefe'].touched" class="text-danger">
+            El teléfono del jefe es obligatorio.
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="correo_jefe">Correo del Jefe</label>
+          <input type="email" id="correo_jefe" class="form-control" formControlName="correo_jefe">
+          <div *ngIf="jefeForm.controls['correo_jefe'].invalid && jefeForm.controls['correo_jefe'].touched" class="text-danger">
+            El correo del jefe es obligatorio y debe ser válido.
+          </div>
+        </div>
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="cargo_jefe">Cargo del Jefe</label>
+          <input type="text" id="cargo_jefe" class="form-control" formControlName="cargo_jefe">
+          <div *ngIf="jefeForm.controls['cargo_jefe'].invalid && jefeForm.controls['cargo_jefe'].touched" class="text-danger">
+            El cargo del jefe es obligatorio.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2" [disabled]="jefeForm.invalid">
+        {{ editing ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button type="button" class="btn btn-secondary mt-2 mx-2" (click)="jefeForm.reset(); editing=false; editingId=null;">
+        Cancelar
+      </button>
+    </form>
+  </div>
+
+  <h3 class="mt-5">Lista de Jefes</h3>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  <div class="table-responsive">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let jefe"> {{ jefe.id }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre_jefe">
+        <th mat-header-cell *matHeaderCellDef> Nombre del Jefe </th>
+        <td mat-cell *matCellDef="let jefe"> {{ jefe.nombre_jefe }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telefono_jefe">
+        <th mat-header-cell *matHeaderCellDef> Teléfono del Jefe </th>
+        <td mat-cell *matCellDef="let jefe"> {{ jefe.telefono_jefe }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="correo_jefe">
+        <th mat-header-cell *matHeaderCellDef> Correo del Jefe </th>
+        <td mat-cell *matCellDef="let jefe"> {{ jefe.correo_jefe }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cargo_jefe">
+        <th mat-header-cell *matHeaderCellDef> Cargo del Jefe </th>
+        <td mat-cell *matCellDef="let jefe"> {{ jefe.cargo_jefe }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let jefe">
+          <div class="action-buttons">
+            <button class="btn btn-warning btn-sm" (click)="onEdit(jefe)">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="onDelete(jefe.id)">Eliminar</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Administrar Contactos</h2>
+
+  <div class="card shadow-lg p-4 mb-5 bg-white rounded custom-card">
+    <form [formGroup]="contactoForm" (ngSubmit)="onSubmit()" class="form">
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="nombre_contacto">Nombre</label>
+          <input type="text" id="nombre_contacto" class="form-control" formControlName="nombre_contacto">
+          <div *ngIf="contactoForm.controls['nombre_contacto'].invalid && contactoForm.controls['nombre_contacto'].touched" class="text-danger">
+            El nombre es obligatorio.
+          </div>
+        </div>
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="cargo_contacto">Cargo</label>
+          <input type="text" id="cargo_contacto" class="form-control" formControlName="cargo_contacto">
+          <div *ngIf="contactoForm.controls['cargo_contacto'].invalid && contactoForm.controls['cargo_contacto'].touched" class="text-danger">
+            El cargo es obligatorio.
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="telefono_contacto">Teléfono</label>
+          <input type="text" id="telefono_contacto" class="form-control" formControlName="telefono_contacto">
+          <div *ngIf="contactoForm.controls['telefono_contacto'].invalid && contactoForm.controls['telefono_contacto'].touched" class="text-danger">
+            El teléfono es obligatorio.
+          </div>
+        </div>
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="celular_contacto">Celular</label>
+          <input type="text" id="celular_contacto" class="form-control" formControlName="celular_contacto">
+          <div *ngIf="contactoForm.controls['celular_contacto'].invalid && contactoForm.controls['celular_contacto'].touched" class="text-danger">
+            El celular es obligatorio.
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="email_contacto">Email</label>
+          <input type="email" id="email_contacto" class="form-control" formControlName="email_contacto">
+          <div *ngIf="contactoForm.controls['email_contacto'].invalid && contactoForm.controls['email_contacto'].touched" class="text-danger">
+            El email es obligatorio y debe tener un formato válido.
+          </div>
+        </div>
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="direccion_contacto">Dirección</label>
+          <input type="text" id="direccion_contacto" class="form-control" formControlName="direccion_contacto">
+          <div *ngIf="contactoForm.controls['direccion_contacto'].invalid && contactoForm.controls['direccion_contacto'].touched" class="text-danger">
+            La dirección es obligatoria.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2" [disabled]="contactoForm.invalid">
+        {{ editing ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button type="button" class="btn btn-secondary mt-2 mx-2" (click)="contactoForm.reset(); editing=false; editingId=null;">
+        Cancelar
+      </button>
+    </form>
+  </div>
+
+  <h3 class="mt-5">Lista de Contactos</h3>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  <div class="table-responsive">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let contacto"> {{ contacto.id }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre_contacto">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let contacto"> {{ contacto.nombre_contacto }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cargo_contacto">
+        <th mat-header-cell *matHeaderCellDef> Cargo </th>
+        <td mat-cell *matCellDef="let contacto"> {{ contacto.cargo_contacto }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telefono_contacto">
+        <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+        <td mat-cell *matCellDef="let contacto"> {{ contacto.telefono_contacto }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="celular_contacto">
+        <th mat-header-cell *matHeaderCellDef> Celular </th>
+        <td mat-cell *matCellDef="let contacto"> {{ contacto.celular_contacto }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email_contacto">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let contacto"> {{ contacto.email_contacto }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="direccion_contacto">
+        <th mat-header-cell *matHeaderCellDef> Dirección </th>
+        <td mat-cell *matCellDef="let contacto"> {{ contacto.direccion_contacto }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let contacto">
+          <div class="action-buttons">
+            <button class="btn btn-warning btn-sm" (click)="onEdit(contacto)">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="onDelete(contacto.id)">Eliminar</button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
